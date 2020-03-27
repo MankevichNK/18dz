@@ -12,10 +12,20 @@ class InfoViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var executorName: UILabel!
+    
+    @IBOutlet weak var genre: UILabel!
+    var name: String?
+    var executor: String?
+    var genreMusic: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = UIImage(named: "album")
-       
+        nameLabel.text = name
+        executorName.text = executor
+        genre.text = genreMusic
     }
     
 

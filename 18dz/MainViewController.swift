@@ -87,25 +87,26 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let moveItems = musicTracks[sourceIndexPath.row]
+        
         musicTracks.remove(at: sourceIndexPath.row)
         musicTracks.insert(moveItems, at: destinationIndexPath.row)
     }
     
     func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath){
-        
-        showInfoVC()
-        
-        
-    }
-    func showInfoVC() {
         let infoVC = getInfoVC()
-    
-        navigationController!.pushViewController(infoVC, animated: true)
+        let trackName = musicTracks[indexPath.row]
+        infoVC.name = trackName.nameTrack
+        infoVC.executor = trackName.nameExecutor
+        infoVC.genreMusic = trackName.genre
+            
+//        (infoVC.view.superview as? UILabel)?.text = trackName
+            navigationController!.pushViewController(infoVC, animated: true)
+        
     }
-    
     func getInfoVC() -> InfoViewController{
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let identifire = String(describing: InfoViewController.self)
         return storyboard.instantiateViewController(identifier: identifire) as! InfoViewController
     }
+    
 }

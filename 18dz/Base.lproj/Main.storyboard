@@ -174,7 +174,10 @@
                         <viewLayoutGuide key="safeArea" id="YK4-Va-D4q"/>
                     </view>
                     <connections>
+                        <outlet property="executorName" destination="yUd-Gi-Nbk" id="Epk-Na-5lZ"/>
+                        <outlet property="genre" destination="Kk8-bJ-xo1" id="3l3-Ds-Jtn"/>
                         <outlet property="imageView" destination="Hd0-2D-a7Y" id="l1S-PA-foh"/>
+                        <outlet property="nameLabel" destination="sY0-9c-YOO" id="q4u-Zu-kAu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wd1-2Y-VD8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
